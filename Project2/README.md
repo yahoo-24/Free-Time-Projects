@@ -6,10 +6,11 @@ This is a Django-based web application for managing online auctions. Users can c
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yahoo-24/auction-platform.git
+   git clone https://github.com/yahoo-24/Free-Time-Projects.git
 2. Navigate to the project directory:
    ```bash
-   cd auction-platform
+   cd Project2
+   cd commerce
 3. Create a virtual environment and activate it:
    ```bash
    python3 -m venv env
