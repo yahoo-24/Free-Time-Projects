@@ -1,0 +1,186 @@
+$date
+  Wed Jul 24 09:57:20 2024
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module multiplier_tb $end
+$var reg 4 ! a[3:0] $end
+$var reg 4 " b[3:0] $end
+$var reg 8 # y[7:0] $end
+$scope module uut $end
+$var reg 4 $ a[3:0] $end
+$var reg 4 % b[3:0] $end
+$var reg 8 & y[7:0] $end
+$var reg 4 ' s1[3:0] $end
+$var reg 4 ( s2[3:0] $end
+$var reg 4 ) s3[3:0] $end
+$var reg 4 * s4[3:0] $end
+$var reg 4 + o1[3:0] $end
+$var reg 4 , o2[3:0] $end
+$var reg 4 - o3[3:0] $end
+$var reg 4 . i1[3:0] $end
+$var reg 4 / i2[3:0] $end
+$var reg 1 0 c1 $end
+$var reg 1 1 c2 $end
+$var reg 1 2 c3 $end
+$scope module adder1 $end
+$var reg 4 3 a[3:0] $end
+$var reg 4 4 b[3:0] $end
+$var reg 4 5 output[3:0] $end
+$var reg 1 6 cin $end
+$var reg 1 7 cout $end
+$upscope $end
+$scope module adder2 $end
+$var reg 4 8 a[3:0] $end
+$var reg 4 9 b[3:0] $end
+$var reg 4 : output[3:0] $end
+$var reg 1 ; cin $end
+$var reg 1 < cout $end
+$upscope $end
+$scope module adder3 $end
+$var reg 4 = a[3:0] $end
+$var reg 4 > b[3:0] $end
+$var reg 4 ? output[3:0] $end
+$var reg 1 @ cin $end
+$var reg 1 A cout $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0110 !
+b0101 "
+b00011110 #
+b0110 $
+b0101 %
+b00011110 &
+b0011 '
+b0000 (
+b0110 )
+b0000 *
+b0011 +
+b0111 ,
+b0011 -
+b0001 .
+b0011 /
+00
+01
+02
+b0011 3
+b0000 4
+b0011 5
+06
+07
+b0110 8
+b0001 9
+b0111 :
+0;
+0<
+b0000 =
+b0011 >
+b0011 ?
+0@
+0A
+#20000000
+b1111 !
+b0011 "
+b00101101 #
+b1111 $
+b0011 %
+b00101101 &
+b0111 '
+b1111 (
+b0000 )
+b0110 +
+b1011 ,
+b0101 -
+b1011 .
+b0101 /
+10
+b0111 3
+b1111 4
+b0110 5
+17
+b0000 8
+b1011 9
+b1011 :
+b0101 >
+b0101 ?
+#40000000
+b1100 "
+b10110100 #
+b1100 %
+b10110100 &
+b0000 '
+b0000 (
+b1111 )
+b1111 *
+b0000 +
+b1111 ,
+b0110 -
+b0000 .
+b0111 /
+00
+01
+12
+b0000 3
+b0000 4
+b0000 5
+07
+b1111 8
+b0000 9
+b1111 :
+0<
+b1111 =
+b0111 >
+b0110 ?
+1A
+#60000000
+b0000 !
+b0110 "
+b00000000 #
+b0000 $
+b0110 %
+b00000000 &
+b0000 )
+b0000 *
+b0000 ,
+b0000 -
+b0000 /
+02
+b0000 8
+b0000 :
+b0000 =
+b0000 >
+b0000 ?
+0A
+#80000000
+b1010 !
+b1001 "
+b01011010 #
+b1010 $
+b1001 %
+b01011010 &
+b0101 '
+b1010 *
+b0101 +
+b0010 ,
+b1011 -
+b0010 .
+b0001 /
+b0101 3
+b0101 5
+b0010 9
+b0010 :
+b1010 =
+b0001 >
+b1011 ?
+#100000000
