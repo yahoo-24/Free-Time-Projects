@@ -8,13 +8,17 @@ This is a Django-based web application for managing online auctions. Users can c
    ```bash
    git clone https://github.com/yahoo-24/auction-platform.git
 2. Navigate to the project directory:
+   ```bash
    cd auction-platform
 3. Create a virtual environment and activate it:
+   ```bash
    python3 -m venv env
    source env/bin/activate
 4. Install dependencies:
+   ```bash
    pip install -r requirements.txt
 5. Run the migrations and start the server:
+   ```bash
    python manage.py migrate
    python manage.py runserver
 
