@@ -1,4 +1,4 @@
-# Auctions
+# Tic-Tac-Toe
 
 ## Description
 This is a simple and quick implementation of the game Tic-Tac-Toe. The player plays against an AI. The AI is designed to make the optimal choice every turn and should therefore be undefeated. The goal of this project is to showcase the Minimax algorithm.
