@@ -1,0 +1,79 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">{{ listing.title }}</h2>
+
+    <div class="card mb-4 shadow-sm">
+        <img class="card-img-top" src="{{ listing.url }}" alt="{{ listing.title }}" style="width:100%;height:400px;object-fit:cover;">
+        <div class="card-body">
+            <h5 class="card-title">Starting price: ${{ listing.starting_bid }}</h5>
+            <p class="card-text">Current bid: ${{ highest_bid }} by {{ bidder }}</p>
+
+            <h4>Details</h4>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Listed by: {{ listing.listed_by.username }}</li>
+                <li class="list-group-item">Category: {{ listing.category }}</li>
+                <li class="list-group-item">Description: {{ listing.description }}</li>
+            </ul>
+        </div>
+
+        <div class="card-footer text-muted text-center">
+            <a href="{% url 'watchlist' listing.listing_id %}" class="btn btn-outline-info">{{ message }}</a>
+        </div>
+    </div>
+
+    <div class="text-center mb-4">
+        {% if owner and not listing.closed %}
+            <form action="{% url 'close' listing.listing_id %}" method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Close Auction</button>
+            </form>
+        {% elif not owner and not listing.closed %}
+            <form action="{% url 'comment' listing.listing_id %}" method="post" class="mb-4">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="comment"><strong>Comment on this item:</strong></label>
+                    <textarea name="comment" class="form-control" id="comment" rows="3" placeholder="Add Comment"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Post Comment</button>
+            </form>
+
+            <form action="{% url 'make_bid' listing.listing_id %}" method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <input type="text" name="bid" class="form-control" placeholder="Your bid" aria-label="Your bid">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit">Place Bid</button>
+                    </div>
+                </div>
+            </form>
+        {% else %}
+            <p class="alert alert-warning">This auction is closed. The winning bid was ${{ highest_bid }} by {{ bidder }}.</p>
+        {% endif %}
+    </div>
+
+    <h4 class="mb-3">Comments</h4>
+    <ul class="list-group">
+        {% for comment in comments %}
+            <li class="list-group-item">
+                <p><strong>{{ comment.user.username }}:</strong> {{ comment.comment }}</p>
+            </li>
+            {% if owner and not comment.replied %}
+                <form action="{% url 'reply' comment.comment_id %}" method="post" class="mb-4">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="reply"><strong>Reply to this comment:</strong></label>
+                        <textarea name="reply" class="form-control" id="reply" rows="3" placeholder="Reply"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post Reply</button>
+            </form>
+            {% elif comment.replied %}
+                <p>Reply by owner: {{ comment.reply }}</p>
+            {% endif %}
+        {% empty %}
+            <li class="list-group-item">No comments posted for this item!</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
