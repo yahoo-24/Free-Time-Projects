@@ -186,7 +186,8 @@ def DisplayMaze(Maze):
 
 def main():
     # Choose the maze by specifying the file below
-    Maze = readFile(File7)
+    file = input("Enter the file name: ")
+    Maze = readFile(file)
     Heuristics, Start, End = SetHeuristics(Maze)
     Result = SolveMaze(Maze, Start, Heuristics, End)
     # The result is either a list of the path or -1
