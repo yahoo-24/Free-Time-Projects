@@ -17,7 +17,7 @@ This is a Django-based web application for Wikipedia-like pages. Users can creat
    source env/bin/activate
 4. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install -r requirement.txt
 5. Run the migrations and start the server:
    ```bash
    python manage.py migrate
